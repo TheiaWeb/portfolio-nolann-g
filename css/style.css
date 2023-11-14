@@ -1,0 +1,46 @@
+:root {    
+
+    /*========== Color ==========*/
+
+    
+
+    
+    /*========== Font family ==========*/
+
+}
+
+
+/*==================== BASE ====================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+input:focus{
+    outline: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+    background: url('../img/body__bg.png');
+}
+
+.section {
+    padding: 80px 8%;
+}
+@media only screen and (max-width: 850px) {
+    .section {
+        padding: 40px 5%;
+    }
+}
