@@ -74,7 +74,7 @@ body {
 }
 
 /*==================== COMPETENCES ====================*/
-.competence__display {
+.entreprises__display {
     background: url('../img/company__bg.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -165,6 +165,8 @@ body {
     top: 328px;
     right: 62px;
 }
+
+
 .mobile__window{
     display: flex;
 }
@@ -195,8 +197,9 @@ body {
     justify-content: space-between;
     margin-top: 20px;
     padding: 0 20px;
-    position: relative; /* Add this to establish a stacking context */
-    z-index: 1; /* Add this to ensure it's displayed above the content */
+    z-index: 1000;
+    position: fixed;
+    bottom: 0; 
 }
 
 button {
