@@ -43,6 +43,8 @@ img {
 }
 body {
     background: url('../img/body__bg.png');
+    font-family: 'ClashofClans', sans-serif; /* Use the ClashofClans font for the body text */
+
 }
 
 .section {
@@ -53,6 +55,7 @@ body {
         padding: 40px 5%;
     }
 }
+
 
 
 .mobile__window {
@@ -77,4 +80,49 @@ body {
 .company__top-banner {
     background-image: url('../img/company__banner.png') no-repeat center;
 }
+.mobile__window{
+    display: flex;
+}
+.testslide {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    position: absolute;
+}
+
+#competences {
+    background-color: #ffcccc; /* Example background color for competences */
+}
+
+#profil {
+    background-color: #ccffcc; /* Example background color for profile */
+}
+
+#entreprises {
+    background-color: #ccccff; /* Example background color for entreprises */
+}
+
+.bottom__navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 20px;
+    position: relative; /* Add this to establish a stacking context */
+    z-index: 1; /* Add this to ensure it's displayed above the content */
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:focus {
+    outline: none;
+}
+>>>>>>> Stashed changes
 
