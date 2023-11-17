@@ -56,13 +56,24 @@ body {
     }
 }
 
-
+body {
+        display: flex;
+        align-items: center;justify-content: center;
+    }
 
 .mobile__window {
     height: 100vh;
-    width: 100vw;
+    width: 500px;
     background-color: red;
+    position: relative;
 }
+@media only screen and (max-width: 500px) {
+    .mobile__window {
+        width: 100vw;
+    }
+    
+}
+
 .text-clash {
     color: white;
     font-family: var(--clash);
@@ -173,7 +184,6 @@ body {
 .testslide {
     display: flex;
     width: 80%;
-    height: 80%;
     align-items: center;
     justify-content: center;
     transition: transform 0.5s ease;
@@ -182,33 +192,40 @@ body {
 
 #competences {
     background-color: #ffcccc; /* Example background color for competences */
+    display: none;
 }
 
 #profil {
     background-color: #ccffcc; /* Example background color for profile */
+    display: none;
 }
 
-#entreprises {
-    background-color: #ccccff; /* Example background color for entreprises */
-}
 
 .bottom__navigation {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-    padding: 0 20px;
     z-index: 1000;
-    position: fixed;
+    position: absolute;
     bottom: 0; 
+    border-top: 2px solid #4F5C70;
+    background: #404B5E;
+    backdrop-filter: blur(2px);
+    width: 100%;
 }
 
-button {
+.nav-button {
     background: none;
     border: none;
     cursor: pointer;
     font-size: 16px;
-}
+    padding: 0 10%;
 
-button:focus {
+}
+.nav-button:focus {
     outline: none;
+}
+.nav-center {
+    border-left: 1px solid #4F5C70;
+    border-right: 1px solid #4F5C70;
+
 }
