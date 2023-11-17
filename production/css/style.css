@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'ClashofClans';
+    src: url('http://vignette4.wikia.nocookie.net/clashofclans/images/a/a9/Supercell-magic-webfont.ttf/revision/latest?cb=20140527043504') format('truetype'), /* TTF */
+         url('http://www.supercell.net/assets/fonts/supercell-magic/supercell-magic-webfont.eot') format('embedded-opentype'), /* EOT for IE */
+         url('http://www.supercell.net/assets/fonts/supercell-magic/supercell-magic-webfont.woff') format('woff'); /* WOFF */
+}
+
 :root {    
 
     /*========== Color ==========*/
@@ -43,4 +50,8 @@ body {
     .section {
         padding: 40px 5%;
     }
+}
+
+body {
+    font-family: 'ClashofClans', sans-serif; /* Use the ClashofClans font for the body text */
 }
