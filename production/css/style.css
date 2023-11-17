@@ -8,12 +8,12 @@
 :root {    
 
     /*========== Color ==========*/
-
+    
     
 
     
     /*========== Font family ==========*/
-    --clash:font-family: 'ClashofClans', sans-serif;
+    --clash: 'ClashofClans', sans-serif;
     
 
 }
@@ -63,6 +63,15 @@ body {
     width: 100vw;
     background-color: red;
 }
+.text-clash {
+    color: white;
+    font-family: var(--clash);
+    text-shadow:
+        -0.7px -0.7px 0 #000,  
+         0.7px -0.7px 0 #000,
+        -0.7px  0.7px 0 #000,
+         0.7px  0.7px 0 #000;
+}
 
 /*==================== COMPETENCES ====================*/
 .competence__display {
@@ -76,9 +85,85 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 20px;
+}
+.company__top img {
+    margin-bottom: -15px;
+    z-index: 100;
+    width: 20%;
 }
 .company__top-banner {
-    background-image: url('../img/company__banner.png') no-repeat center;
+    background: url('../img/company__banner.png') no-repeat center;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.company__top-banner p {
+    font-size: 16px;
+}
+.company__text-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 18px;
+}
+.company__hr {
+    width: 35px;
+    border: 1px solid #71C4D2;
+}
+.company__text-top p {
+    font-size: 15px;
+    text-align: center;
+}
+.company__content {
+    position: relative;
+}
+.company__ship {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+.company__ship p {
+    font-size: 11px;
+}
+.company__popup {
+    display: none;
+}
+.oserv-ship {
+    top: 27px;
+    left: 34px;
+}
+.torc-ship {
+    top: 35px;
+    right: 15px;
+}
+.green-ship {
+    top: 106px;
+    left: 146px;
+}
+.sncf-ship {
+    top: 166px;
+    left: 20px;
+}
+.wooka-ship {
+    top: 214px;
+    left: 146px;
+}
+.dexxon-ship {
+    top: 191px;
+    right: 25px;
+}
+.wavy-ship {
+    top: 312px;
+    left: 50px;
+}
+.viv-ship {
+    top: 328px;
+    right: 62px;
 }
 .mobile__window{
     display: flex;
@@ -124,5 +209,3 @@ button {
 button:focus {
     outline: none;
 }
->>>>>>> Stashed changes
-
