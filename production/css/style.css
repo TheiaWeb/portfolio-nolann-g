@@ -214,18 +214,24 @@ body {
 }
 
 .nav-button {
-    background: none;
     border: none;
     cursor: pointer;
     font-size: 16px;
     padding: 0 10%;
+    background-color: transparent; /* Set the initial background color to transparent */
+    color: #333; /* Set the initial text color */
+    border: 2px solid #333; /* Set the initial border */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add smooth transitions for hover and active states */
+  }
 
+  .nav-button:hover,
+.nav-button.active {
+  background-color: #e0e0e0;
+  color: #333;
+  border-color: #333;
 }
+
+/* Focus styles for the buttons */
 .nav-button:focus {
-    outline: none;
-}
-.nav-center {
-    border-left: 1px solid #4F5C70;
-    border-right: 1px solid #4F5C70;
-
+  outline: none;
 }
