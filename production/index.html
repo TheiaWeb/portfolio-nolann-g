@@ -3,49 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Nolann Gerbault - Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <section class="mobile__window">
+       
         <!--======= COMPETENCES =======-->
         <div class="competence__display">
 
-                <div class="company__top">
+                <div class="company__top" id="competences">
                     <img src="img/company__logo-main.png" alt="">
                     <div class="company__top-banner">
-                        <p>Entreprises</p>
+                        <p>competences</p>
                         <img src="img/company__banner.png" alt="">
                     </div>
                 </div>
         </div>
 
         <!--======= PROFIL =======-->
-        <div class="profil__display">
-            
+        <div class="profil__display" id="profil">
+            <div class="company__top">
+                <img src="img/company__logo-main.png" alt="">
+                <div class="company__top-banner">
+                    <p>profil</p>
+                    <img src="img/company__banner.png" alt="">
+                </div>
+            </div>
         </div>
 
         <!--======= ENTREPRISES =======-->
-        <div class="entreprises__display">
-            
+        <div class="entreprises__display" id="entreprises">
+            <div class="company__top">
+                <img src="img/company__logo-main.png" alt="">
+                <div class="company__top-banner">
+                    <p>entreprises</p>
+                    <img src="img/company__banner.png" alt="">
+                </div>
+            </div>
         </div>
-
-
-
-
-
 
         <div class="bottom__navigation">
             <nav>
-                <ul>
-                    <li><img src="" alt=""></li>
-                    <li></li>
-                    <li></li>
-                </ul>
+               <button class="nav-button"  id="competences-button"><img src="img/menu__card.png" alt=""></button>
+               <button class="nav-button"  id="profil-button"><img src="img/menu__logo.png" alt=""></button>
+               <button class="nav-button"  id="entreprises-button"><img src="img/menu__people.png" alt=""></button>
             </nav>
         </div>
 
     </section>
     
 </body>
+<script type="module" src="js/firebase-config.js"></script>
+<script src="js/script.js"></script>
 </html>
