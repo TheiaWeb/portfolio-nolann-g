@@ -13,6 +13,8 @@
 
     
     /*========== Font family ==========*/
+    --clash:font-family: 'ClashofClans', sans-serif;
+    
 
 }
 
@@ -52,6 +54,27 @@ body {
     }
 }
 
-body {
-    font-family: 'ClashofClans', sans-serif; /* Use the ClashofClans font for the body text */
+
+.mobile__window {
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
 }
+
+/*==================== COMPETENCES ====================*/
+.competence__display {
+    background: url('../img/company__bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+.company__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.company__top-banner {
+    background-image: url('../img/company__banner.png') no-repeat center;
+}
+
