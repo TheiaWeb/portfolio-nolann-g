@@ -49,5 +49,38 @@ buttons.forEach((button) => {
 
     // Add the 'active' class to the clicked button
     button.classList.add('active');
+
+    // Move the triangle images to the active button
+    moveTrianglesToActiveButton(button);
   });
 });
+
+
+function moveTrianglesToActiveButton(activeButton) {
+  // First, ensure all triangles are removed from all buttons
+  document.querySelectorAll('.triangle-before, .triangle-after').forEach(triangle => {
+    triangle.remove();
+  });
+
+  // Create new triangle elements (assuming you have the same source for these images)
+  let newTriangleBefore = document.createElement('img');
+  newTriangleBefore.src = 'img/menu__triangle.png';
+  newTriangleBefore.className = 'triangle-image triangle-before';
+
+  let newTriangleAfter = document.createElement('img');
+  newTriangleAfter.src = 'img/menu__triangle.png';
+  newTriangleAfter.className = 'triangle-image triangle-after';
+
+  // Identify the image and text elements within the active button
+  const imgElement = activeButton.querySelector('img:not(.triangle-image)');
+  const textElement = activeButton.querySelector('.buttontext');
+
+  // Reconstruct the button content
+  activeButton.innerHTML = '';
+  activeButton.appendChild(newTriangleBefore);
+  if (imgElement) activeButton.appendChild(imgElement);
+  activeButton.appendChild(newTriangleAfter);
+  if (textElement) activeButton.appendChild(textElement);
+}
+
+

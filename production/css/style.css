@@ -202,10 +202,6 @@ body {
     border: none;
 }
 
-
-
-
-
 .mobile__window{
     display: flex;
 }
@@ -310,8 +306,18 @@ body {
 .nav-button.active {
   background-color: #48698A;
 }
-
+.nav-button.active img {
+    margin-top: -30%;
+}
 /* Focus styles for the buttons */
 .nav-button:focus {
   outline: none;
+}
+
+.buttontext{
+    display: none;
+}
+
+.nav-button.active .buttontext {
+    display: block; /* or inline, inline-block, etc., depending on your layout */
 }
