@@ -230,6 +230,12 @@ body {
     height: 100%;
     width: 100%;
 }
+.competence__tab-content {
+    display: none;
+}
+.tab__active {
+    display: block;
+}
 .competences__tab-box {
     display: flex;
     flex-direction: row;
@@ -267,34 +273,97 @@ body {
     font-size: 16px;
 }
 .competence__tab-content-bot {
-    padding: 0 10px;
+    padding: 15px 10px;
     border-radius: 0px 0px 5px 5px;
     background: linear-gradient(180deg, rgba(3, 40, 123, 0.86) 0%, rgba(13, 121, 210, 0.85) 100%);
     box-shadow: 0px -3px 0px 0px #005A9D inset;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
 
 }
 .competence__tab-row {
     display: flex;
     gap: 10px;
+    justify-content: space-between;
 }
 .competence__tab-card {
     position: relative;
-    border: 1.5px solid #2A252A;
-    filter: drop-shadow(-2px 0px 5px #BC0BED) drop-shadow(2px 0px 5px #BC0BED) drop-shadow(0px -2px 5px #BC0BED) drop-shadow(0px 2px 5px #BC0BED);
-    background-color: #fff;
+    width: 75px;
+
 }
-.competence__tab-card img {
+.competence__tab-card-box {
+    border: 1.5px solid #2A252A;
+    background-color: #fff;
+    border-radius: 6px;
+}
+.purple__card-border {
+    filter: drop-shadow(-2px 0px 2px #BC0BED) drop-shadow(2px 0px 2px #BC0BED) drop-shadow(0px -2px 2px #BC0BED) drop-shadow(0px 2px 2px #BC0BED);
+}
+.orange__card-border {
+    filter: drop-shadow(-2px 0px 2px #DE6617) drop-shadow(2px 0px 2px #DE6617) drop-shadow(0px -2px 2px #DE6617) drop-shadow(0px 2px 2px #DE6617);
+}
+.competence__goutte {
     position: absolute;
     top: -5px;
     left: -5px;
+    z-index: 10;
 }
-.competence__tab-card-banner {
+.competence__tab-card-banner-purple {
     background-color: rgba(159, 74, 193, 1);
+    padding: 5px;
+    text-align: center;
+    border-radius: 0 0 4px 4px;
 }
-.competence__tab-card-banner p {
+.competence__tab-card-banner-orange {
+    background-color: #C16827;
+    padding: 5px;
+    text-align: center;
+    border-radius: 0 0 4px 4px;
+}
+.competence__tab-card-banner-purple p {
     color: #FB98FA;
+    font-size: 9px;
+    
+}
+.competence__tab-card-banner-orange p {
+    color: #FCC373;
+    font-size: 9px;
+    
+}
+.competence__img {
+    width: 75px;
+    height: 75px;
 }
 
+.competence__bottom {
+    border-radius: 8px;
+    border: 1px solid rgba(4, 22, 63, 0.20);
+    background: #15284A;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    width: 98%;
+    display: flex;
+    padding: 5px 7px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
+    
+
+}
+.competence__bottom p {
+    font-size: 12px;
+    padding-left: 5px;
+}
+.competence__bottom-btn {
+    border-radius: 6px;
+    background: #4DACF6;
+    box-shadow: 0px -2.5px 2px 0px #1B82E6 inset, 0px 2.5px 2px 0px #58C3F1 inset;    padding: 5px 10px;
+    border: none;
+    padding: 7px 12px;
+}
+.competence__language-box {
+    padding: 0 10px;
+}
 
 
 
