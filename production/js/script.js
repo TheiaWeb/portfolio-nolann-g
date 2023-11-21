@@ -90,27 +90,38 @@ const buttonDecouvrir = document.getElementById("btndecouvrir");
 const PopUptext = document.getElementById("profil_popup");
 const closeButton = document.getElementById("image_close_popup");
 const imageprofile = document.getElementById("profil__banner-pp");
+const mobileWindow = document.querySelector(".mobile__window");
+
+// Function to show the popup
+function showPopup() {
+  PopUptext.style.display = "block";
+  mobileWindow.classList.add("darken"); // Add a class to darken the mobile__window
+}
+
+// Function to close the popup
+function closePopup() {
+  PopUptext.style.display = "none";
+  mobileWindow.classList.remove("darken"); // Remove the class to remove the dark overlay
+}
 
 imageprofile.addEventListener('click', (e) => {
-  PopUptext.style.display = "block";
-  e.stopPropagation(); // Prevent the click event from propagating to the document
-})
-// Add a click event listener to the button to show the popup
-buttonDecouvrir.addEventListener('click', (e) => {
-  PopUptext.style.display = "block";
-  e.stopPropagation(); // Prevent the click event from propagating to the document
-}); 
-
-// Add a click event listener to the close button to close the popup
-closeButton.addEventListener('click', (e) => {
-  PopUptext.style.display = "none";
+  showPopup();
   e.stopPropagation(); // Prevent the click event from propagating to the document
 });
 
-// Add a click event listener to the document to close the popup when a click occurs outside of it
+buttonDecouvrir.addEventListener('click', (e) => {
+  showPopup();
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+});
+
+closeButton.addEventListener('click', (e) => {
+  closePopup();
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+});
+
 document.addEventListener('click', (e) => {
   if (e.target !== PopUptext && !PopUptext.contains(e.target)) {
-    PopUptext.style.display = "none";
+    closePopup();
   }
 });
 
@@ -146,4 +157,50 @@ gmailLink.addEventListener('click', function (event) {
         // Open Gmail in a new window or tab
         window.open(gmailWebUrl, '_blank');
     }
+});
+
+// Calculate the percentage completion
+const currentValue = 126;
+const maxValue = 365;
+const percentage = (currentValue / maxValue) * 100;
+
+// Calculate the width based on the maximum width of 100px
+const maxWidth = 100; // Maximum width in pixels
+const calculatedWidth = (percentage / 100) * maxWidth;
+
+// Set the width of the progress bar
+document.getElementById('progress_bar').style.width = calculatedWidth + 'px';
+
+
+
+// Get a reference to the add button element
+var addButton = document.getElementById("addcoins");
+
+// Add a click event listener to the add button
+addButton.addEventListener("click", function() {
+    // Get the current number inside the <p> element
+    var coinsElement = document.getElementById("Coins");
+    var currentNumber = parseInt(coinsElement.textContent);
+
+    // Increment the number by 1
+    var newNumber = currentNumber + 1;
+
+    // Update the display with the new number
+    coinsElement.textContent = newNumber;
+});
+
+// Get a reference to the add button element
+var addButton2 = document.getElementById("addcoins2");
+
+// Add a click event listener to the add button
+addButton2.addEventListener("click", function() {
+    // Get the current number inside the <p> element
+    var coinsElement2 = document.getElementById("Coins2");
+    var currentNumber2 = parseInt(coinsElement2.textContent);
+
+    // Increment the number by 1
+    var newNumber2 = currentNumber2 + 1;
+
+    // Update the display with the new number
+    coinsElement2.textContent = newNumber2;
 });
