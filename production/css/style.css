@@ -143,7 +143,7 @@ body {
     font-size: 11px;
 }
 .company__popup {
-    display: block;
+
     z-index: 1080;
     border-radius: 10px;
     border: 5px solid #5D6478;
@@ -156,7 +156,7 @@ body {
     transform: translate(-50%, 0);
     display: none;
 }
-.company__popup-close {
+.company__popup_close {
     position: absolute;
     top: 0;
     right: 0;
@@ -871,7 +871,8 @@ margin-bottom: -3px;
     margin-bottom: -3px;
 }
 
-#progress_bar {
+#progress_bar,
+#progress_bar2 {
     left: 0;
     position: absolute;
     background-color :#10abf7;

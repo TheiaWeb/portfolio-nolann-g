@@ -1,3 +1,248 @@
+
+//#region Compétences
+document.addEventListener("DOMContentLoaded", function () {
+  // Get references to the sections and navigation buttons
+  const MediaSection = document.getElementById("tab_media");
+  const AdobeSection = document.getElementById("tab_adobe");
+  const PhotoSection = document.getElementById("tab_photo");
+  const OutilSection = document.getElementById("tab_outils_media");
+
+  const Tabs1 = document.getElementById("tabs1");
+  const Tabs2 = document.getElementById("tabs2");
+  const Tabs3 = document.getElementById("tabs3");
+  const Tabs4 = document.getElementById("tabs4");
+
+  // Function to hide all sections
+  function hideAllSections() {
+      MediaSection.style.display = "none";
+      AdobeSection.style.display = "none";
+      PhotoSection.style.display = "none";
+      OutilSection.style.display = "none";
+  }
+
+  // Function to show a specific section
+  function showSection(section) {
+      hideAllSections();
+      // Remove the 'competence__tab-active' class from all tabs
+      Tabs1.classList.remove("competence__tab-active");
+      Tabs2.classList.remove("competence__tab-active");
+      Tabs3.classList.remove("competence__tab-active");
+      Tabs4.classList.remove("competence__tab-active");
+
+      section.style.display = "block";
+      // Add the 'competence__tab-active' class to the corresponding tab
+      if (section === MediaSection) {
+          Tabs1.classList.add("competence__tab-active");
+      } else if (section === AdobeSection) {
+          Tabs2.classList.add("competence__tab-active");
+      } else if (section === PhotoSection) {
+          Tabs3.classList.add("competence__tab-active");
+      } else if (section === OutilSection) {
+          Tabs4.classList.add("competence__tab-active");
+      }
+  }
+
+  // Initially, hide all sections
+  hideAllSections();
+
+  // Add click event listeners to navigation buttons
+  Tabs1.addEventListener("click", function () {
+      showSection(MediaSection);
+  });
+
+  Tabs2.addEventListener("click", function () {
+      showSection(AdobeSection);
+  });
+
+  Tabs3.addEventListener("click", function () {
+      showSection(PhotoSection);
+  });
+
+  Tabs4.addEventListener("click", function () {
+      showSection(OutilSection);
+  });
+
+  // Show the initial section (e.g., MediaSection)
+  showSection(MediaSection);
+});
+//#endregion
+
+//#region Profil
+//Function PopUp Decouvrir
+
+const buttonDecouvrir = document.getElementById("btndecouvrir");
+const PopUptext = document.getElementById("profil_popup");
+const closeButton = document.getElementById("image_close_popup");
+const imageprofile = document.getElementById("profil__banner-pp");
+const mobileWindow = document.querySelector(".mobile__window");
+
+// Function to show the popup
+function showPopup() {
+  PopUptext.style.display = "block";
+  mobileWindow.classList.add("darken"); // Add a class to darken the mobile__window
+}
+
+// Function to close the popup
+function closePopup() {
+  PopUptext.style.display = "none";
+  mobileWindow.classList.remove("darken"); // Remove the class to remove the dark overlay
+}
+
+imageprofile.addEventListener('click', (e) => {
+  showPopup();
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+});
+
+buttonDecouvrir.addEventListener('click', (e) => {
+  showPopup();
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+});
+
+closeButton.addEventListener('click', (e) => {
+  closePopup();
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+});
+
+document.addEventListener('click', (e) => {
+  if (e.target !== PopUptext && !PopUptext.contains(e.target)) {
+    closePopup();
+  }
+});
+//#endregion
+
+//#region Entreprises
+
+// Function to handle the click event
+function togglePopup(bateauId, popupId) {
+  const bateau = document.getElementById(bateauId);
+  const popup = document.getElementById(popupId);
+
+  bateau.addEventListener('click', () => {
+    // Create the overlay element
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Semi-transparent black
+    overlay.style.zIndex = '1040'; // Place it above other content
+
+    // Append the overlay to the body
+    document.body.appendChild(overlay);
+
+    // Show the popup
+    popup.style.display = "block";
+  });
+
+  const closeBtn = document.getElementById(bateauId + "__Popup");
+  closeBtn.addEventListener('click', () => {
+    const overlay = document.getElementById('overlay');
+    if (overlay) {
+      document.body.removeChild(overlay);
+    }
+    popup.style.display = "none";
+  });
+}
+
+// Call the function for each element
+togglePopup("bateauOserv", "company__popup");
+togglePopup("bateauTorc", "company__popup");
+togglePopup("bateauGreenSuits", "company__popup");
+togglePopup("bateauSNCF", "company__popup");
+togglePopup("bateauWooka", "company__popup");
+togglePopup("bateauDexxon", "company__popup");
+togglePopup("bateauWavy", "company__popup");
+togglePopup("bateauViv", "company__popup");
+
+
+// Event listener to close the popup when clicking outside the popup
+
+
+
+//#endregion
+// https://platform.openai.com/docs/overview
+
+
+//#region Ouverture Gmail 
+// Function to check if the user is on a mobile device
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+const gmailLink1 = document.getElementById('gmail-link-1');
+    const gmailLink2 = document.getElementById('gmail-link-2');
+    const gmailLink3 = document.getElementById('gmail-link-3');
+
+    // Add click event listeners for each Gmail link
+    gmailLink1.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default behavior of the link
+        // Define email parameters
+        const to = 'vinc.charles0@gmail.com'; // Update this to the recipient's email address
+        const subject = 'Subject here';
+        const body = 'Body of the email here';
+
+        if (isMobile()) {
+            // If the user is on a mobile device, open the Gmail app if installed, or a web-based Gmail version
+            const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+
+            // Redirect to the Gmail app or web-based Gmail
+            window.location.href = gmailAppUrl;
+        } else {
+            // If the user is not on a mobile device, open Gmail in a new window or tab
+            const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open Gmail in a new window or tab
+            window.open(gmailWebUrl, '_blank');
+        }
+    });
+    gmailLink2.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent the default behavior of the link
+      // Define email parameters
+      const to = 'vinc.charles0@gmail.com'; // Update this to the recipient's email address
+      const subject = 'Subject here';
+      const body = 'Body of the email here';
+
+      if (isMobile()) {
+          // If the user is on a mobile device, open the Gmail app if installed, or a web-based Gmail version
+          const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+
+          // Redirect to the Gmail app or web-based Gmail
+          window.location.href = gmailAppUrl;
+      } else {
+          // If the user is not on a mobile device, open Gmail in a new window or tab
+          const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+          // Open Gmail in a new window or tab
+          window.open(gmailWebUrl, '_blank');
+      }
+  });
+  gmailLink3.addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the default behavior of the link
+    // Define email parameters
+    const to = 'vinc.charles0@gmail.com'; // Update this to the recipient's email address
+    const subject = 'Subject here';
+    const body = 'Body of the email here';
+
+    if (isMobile()) {
+        // If the user is on a mobile device, open the Gmail app if installed, or a web-based Gmail version
+        const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+
+        // Redirect to the Gmail app or web-based Gmail
+        window.location.href = gmailAppUrl;
+    } else {
+        // If the user is not on a mobile device, open Gmail in a new window or tab
+        const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Open Gmail in a new window or tab
+        window.open(gmailWebUrl, '_blank');
+    }
+});
+    
+    //#endregion
+
+//#region Nav Bottom
 // JavaScript code to handle section switching
 document.addEventListener("DOMContentLoaded", function () {
   // Get references to the sections and navigation buttons
@@ -28,6 +273,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add click event listeners to navigation buttons
   competencesButton.addEventListener("click", function () {
     showSection(competencesSection);
+    document.getElementById("Coins3").value == document.getElementById("Coins").value;
+    document.getElementById("Coins4").value == document.getElementById("Coins2").value;
   });
 
   profilButton.addEventListener("click", function () {
@@ -83,82 +330,45 @@ buttons.forEach((button) => {
     moveTrianglesToActiveButton(button);
   });
 });
+//#endregion
 
-//Function PopUp Decouvrir
+//#region Incrementeur Coins + Gems
+// Get a reference to the add button element
+function updateDisplay(elementId) {
+            var coinsElement = document.getElementById(elementId);
+            var currentNumber = parseInt(coinsElement.textContent);
+            var newNumber = currentNumber + 1;
+            coinsElement.textContent = newNumber;
+        }
 
-const buttonDecouvrir = document.getElementById("btndecouvrir");
-const PopUptext = document.getElementById("profil_popup");
-const closeButton = document.getElementById("image_close_popup");
-const imageprofile = document.getElementById("profil__banner-pp");
-const mobileWindow = document.querySelector(".mobile__window");
+        // Add click event listeners for the first set of buttons
+        var addButton1 = document.getElementById("addcoins");
+        var addButton3 = document.getElementById("addcoins3");
 
-// Function to show the popup
-function showPopup() {
-  PopUptext.style.display = "block";
-  mobileWindow.classList.add("darken"); // Add a class to darken the mobile__window
-}
+        addButton1.addEventListener("click", function() {
+            updateDisplay("Coins1");
+        });
 
-// Function to close the popup
-function closePopup() {
-  PopUptext.style.display = "none";
-  mobileWindow.classList.remove("darken"); // Remove the class to remove the dark overlay
-}
+        addButton3.addEventListener("click", function() {
+            updateDisplay("Coins3");
+        });
 
-imageprofile.addEventListener('click', (e) => {
-  showPopup();
-  e.stopPropagation(); // Prevent the click event from propagating to the document
-});
+        // Add click event listeners for the second set of buttons
+        var addButton2 = document.getElementById("addcoins2");
+        var addButton4 = document.getElementById("addcoins4");
 
-buttonDecouvrir.addEventListener('click', (e) => {
-  showPopup();
-  e.stopPropagation(); // Prevent the click event from propagating to the document
-});
+        addButton2.addEventListener("click", function() {
+            updateDisplay("Coins2");
+        });
 
-closeButton.addEventListener('click', (e) => {
-  closePopup();
-  e.stopPropagation(); // Prevent the click event from propagating to the document
-});
+        addButton4.addEventListener("click", function() {
+            updateDisplay("Coins4");
+        });
 
-document.addEventListener('click', (e) => {
-  if (e.target !== PopUptext && !PopUptext.contains(e.target)) {
-    closePopup();
-  }
-});
+        
+//#endregion
 
-// https://platform.openai.com/docs/overview
-
-// Get the Gmail link element by its ID
-const gmailLink = document.getElementById('gmail-link');
-
-// Function to check if the user is on a mobile device
-function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-
-// Add a click event listener to the Gmail link
-gmailLink.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent the default behavior of the link
-
-    // Define email parameters
-    const to = 'vinc.charles0@gmail.com'; // Update this to the recipient's email address
-    const subject = 'Subject here';
-    const body = 'Body of the email here';
-
-    if (isMobile()) {
-        // If the user is on a mobile device, open the Gmail app if installed, or a web-based Gmail version
-        const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
-
-        // Redirect to the Gmail app or web-based Gmail
-        window.location.href = gmailAppUrl;
-    } else {
-        // If the user is not on a mobile device, open Gmail in a new window or tab
-        const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Open Gmail in a new window or tab
-        window.open(gmailWebUrl, '_blank');
-    }
-});
-
+//#region Progress Bar
 // Calculate the percentage completion
 const currentValue = 126;
 const maxValue = 365;
@@ -170,37 +380,8 @@ const calculatedWidth = (percentage / 100) * maxWidth;
 
 // Set the width of the progress bar
 document.getElementById('progress_bar').style.width = calculatedWidth + 'px';
+document.getElementById('progress_bar2').style.width = calculatedWidth + 'px';
 
 
+//#endregion
 
-// Get a reference to the add button element
-var addButton = document.getElementById("addcoins");
-
-// Add a click event listener to the add button
-addButton.addEventListener("click", function() {
-    // Get the current number inside the <p> element
-    var coinsElement = document.getElementById("Coins");
-    var currentNumber = parseInt(coinsElement.textContent);
-
-    // Increment the number by 1
-    var newNumber = currentNumber + 1;
-
-    // Update the display with the new number
-    coinsElement.textContent = newNumber;
-});
-
-// Get a reference to the add button element
-var addButton2 = document.getElementById("addcoins2");
-
-// Add a click event listener to the add button
-addButton2.addEventListener("click", function() {
-    // Get the current number inside the <p> element
-    var coinsElement2 = document.getElementById("Coins2");
-    var currentNumber2 = parseInt(coinsElement2.textContent);
-
-    // Increment the number by 1
-    var newNumber2 = currentNumber2 + 1;
-
-    // Update the display with the new number
-    coinsElement2.textContent = newNumber2;
-});
