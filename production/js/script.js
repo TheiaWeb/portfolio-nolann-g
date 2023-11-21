@@ -147,14 +147,14 @@ function togglePopup(bateauId, popupId) {
 }
 
 // Call the function for each element
-togglePopup("bateauOserv", "company__popup");
-togglePopup("bateauTorc", "company__popup");
-togglePopup("bateauGreenSuits", "company__popup");
-togglePopup("bateauSNCF", "company__popup");
-togglePopup("bateauWooka", "company__popup");
-togglePopup("bateauDexxon", "company__popup");
-togglePopup("bateauWavy", "company__popup");
-togglePopup("bateauViv", "company__popup");
+togglePopup("bateauOserv", "company__popup_oserv");
+togglePopup("bateauTorc", "company__popup_torc");
+togglePopup("bateauGreenSuits", "company__popup_grensuits");
+togglePopup("bateauSNCF", "company__popup_sncf");
+togglePopup("bateauWooka", "company__popup_wooka");
+togglePopup("bateauDexxon", "company__popup_dexxon");
+togglePopup("bateauWavy", "company__popup_wavy");
+togglePopup("bateauViv", "company__popup_viv");
 
 
 // Event listener to close the popup when clicking outside the popup
