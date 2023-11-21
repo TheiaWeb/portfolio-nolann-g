@@ -307,7 +307,14 @@ body {
 .mobile__window{
     display: flex;
 }
-
+.testslide {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    position: absolute;
+}
 /*==================== compétence ====================*/
 
 
@@ -334,17 +341,21 @@ body {
     gap: 10px;
     padding: 0 70px;
     width: 100%;
+    justify-content: space-between;
 
 }
 .competence__tab-btn {
     border-radius: 4px 4px 0 0;
     border: 1px solid #04163F;
     background-color: rgba(25, 41, 81, 0.6);
-    width: 54px;
+    width: 64px;
     height: 37px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.competence__tab-btn:hover {
+    cursor: pointer;
 }
 .competence__tab-active {
     background-color: rgba(132, 176, 214, 1);
@@ -365,13 +376,15 @@ body {
     font-size: 16px;
 }
 .competence__tab-content-bot {
-    padding: 15px 10px;
+    padding: 15px 20px;
     border-radius: 0px 0px 5px 5px;
     background: linear-gradient(180deg, rgba(3, 40, 123, 0.86) 0%, rgba(13, 121, 210, 0.85) 100%);
     box-shadow: 0px -3px 0px 0px #005A9D inset;
     gap: 15px;
     display: flex;
     flex-direction: column;
+    height: 40vh;
+    justify-content: space-evenly;
 
 }
 .competence__tab-row {
@@ -452,8 +465,12 @@ body {
     border: none;
     padding: 7px 12px;
 }
+.competence__bottom-btn:hover {
+    cursor: pointer;
+}
 .competence__language-box {
-    padding: 0 10px;
+    padding: 15px 20px;
+    height: 20vh;
 }
 
 
@@ -554,6 +571,7 @@ padding-top: 5px;
     width: 100%;
     
     
+    
 
   }
 .profil__popup-box {
@@ -585,8 +603,28 @@ padding-top: 5px;
     background: url('../img/profil__popup-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
-    
+    overflow-x: hidden; 
 }
+/*Scrollbar popin*/
+/* Personnalisation de la barre de défilement */
+.profil-content-box::-webkit-scrollbar {
+    width: 10px; /* Largeur de la barre de défilement */
+  }
+  
+  .profil-content-box::-webkit-scrollbar-track {
+    background-color: #a7a7a7d8; /* Couleur de l'arrière-plan de la piste */
+    border-radius: 0 0 5px 0;
+  }
+  
+  .profil-content-box::-webkit-scrollbar-thumb {
+    background-color: #FFB901; /* Couleur du pouce de la barre de défilement */
+    border-radius: 5px;
+  }
+  
+  .profil-content-box::-webkit-scrollbar-thumb:hover {
+    background-color: #d19600; /* Couleur du pouce au survol */
+  }
+  
 .profil__popup-btn-box {
     display: flex;
     flex-direction: column;
@@ -1036,8 +1074,30 @@ margin-bottom: -3px;
     .profil__banner-top-right {
         gap: 10px;
     }
-
-    .profil__banner-bottom-card {
+    .profil-content img {
         scale: 1.1;
+        padding: 50px 0;
+    }
+    .profil__banner-bottom-card {
+        scale: 1.15;
+    }
+    .profil__popup-croix {
+        top: -5px;
+        right: 15px;
+    }
+    .profil-content-box .competence__tab-card {
+        scale: 1.2;
+        margin-top: 20px;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .competence__display .competence__tab-card {
+        scale: 0.9;
+    }
+    .competence__language-box,
+    .competence__tab-content-bot {
+        padding: 10px;
+
     }
   }
