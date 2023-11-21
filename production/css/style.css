@@ -66,6 +66,8 @@ body {
     width: 500px;
     background-color: red;
     position: relative;
+    border-radius: 20px;
+    border: 7px solid #59687B;
 }
 @media only screen and (max-width: 500px) {
     .mobile__window {
@@ -91,6 +93,7 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    border-radius: 12px;
 }
 .company__top {
     display: flex;
@@ -130,7 +133,7 @@ body {
 }
 .company__content {
     position: relative;
-    height: 57%;
+    height: 55%;
 }
 .company__ship {
     display: inline-flex;
@@ -138,6 +141,9 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
+}
+.company__ship:hover {
+    cursor: pointer;
 }
 .company__ship p {
     font-size: 11px;
@@ -160,6 +166,9 @@ body {
     position: absolute;
     top: 0;
     right: 0;
+}
+.company__popup_close:hover {
+    cursor: pointer;
 }
 .company__popup-header {
     display: flex;
@@ -229,36 +238,36 @@ body {
 
 
 .oserv-ship {
-    top: 27px;
-    left: 34px;
+    top: 6%;
+    left: 8%;
 }
 .torc-ship {
-    top: 35px;
-    right: 15px;
+    top: 8%;
+    right: 15%;
 }
 .green-ship {
-    top: 106px;
-    left: 146px;
+    top: 25%;
+    left: 38%;
 }
 .sncf-ship {
-    top: 166px;
-    left: 20px;
+    top: 35%;
+    left: 8%;
 }
 .wooka-ship {
-    top: 214px;
-    left: 146px;
+    top: 60%;
+    left: 40%;
 }
 .dexxon-ship {
-    top: 191px;
-    right: 25px;
+    top: 40%;
+    right: 8%;
 }
 .wavy-ship {
-    top: 312px;
-    left: 50px;
+    top: 70%;
+    left: 12%;
 }
 .viv-ship {
-    top: 328px;
-    right: 62px;
+    top: 71%;
+    right: 10%;
 }
 .company__bottom {
     border-radius: 10px;
@@ -281,9 +290,15 @@ body {
     border-radius: 6px;
     background: #BE74FC;
     box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.25), 0px -1px 4px 1.5px #583A70 inset;
-    padding: 5px 10px;
+    padding: 10px;
     border: none;
+    color: #fff;
 }
+.company__bottom-btn:hover {
+    cursor: pointer;
+} 
+
+
 
 
 
@@ -312,6 +327,7 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    border-radius: 12px;
 }
 .competence__tab-content {
     display: none;
@@ -461,6 +477,7 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    border-radius: 12px;
 }
 
 .profil__banner-top {
@@ -554,6 +571,7 @@ padding-top: 5px;
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 100;
+    width: 98%;
 }
 .profil__popup-croix {
     position: absolute;
@@ -569,6 +587,8 @@ padding-top: 5px;
     width: 96%;
     margin: auto;
     background: url('../img/profil__popup-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     
 }
 .profil__popup-btn-box {
@@ -895,7 +915,7 @@ margin-bottom: -3px;
     background: #404B5E;
     backdrop-filter: blur(2px);
     border-top: 2px solid #4F5C70;
-
+    border-radius: 0 0 12px 12px;
     width: 100%;
 }
 
@@ -904,6 +924,12 @@ margin-bottom: -3px;
     background: #404B5E;
     border: #404B5E;
     width: 33.3%;
+}
+.nav-button-left {
+    border-radius: 0 0 0 12px;
+}
+.nav-button-right {
+    border-radius: 0 0 12px 0;
 }
 .nav-center {
     border-left: 1px solid #4F5C70 ;
@@ -946,4 +972,22 @@ margin-bottom: -3px;
   }
   
 
-  
+
+  /* Media */
+  @media screen and (max-height: 760px) {
+    .company__content {
+        height: 45%;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .mobile__window {
+        border: none;
+        border-radius: 0;
+    }
+    .entreprises__display,
+    .competence__display,
+    .nav-button,
+    .profil__display {
+        border-radius: 0;
+    }
+  }
