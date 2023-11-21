@@ -546,8 +546,19 @@ margin-bottom: -3px;
 .nav-button.active {
   background-color: #48698A;
 }
+.nav-button.active img {
+    margin-top: -30%;
+}
+.buttontext{
+    display: none;
+}
+
+.nav-button.active .buttontext {
+    display: block; /* or inline, inline-block, etc., depending on your layout */
+}
 
 /* Focus styles for the buttons */
 .nav-button:focus {
   outline: none;
 }
+
