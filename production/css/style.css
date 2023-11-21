@@ -143,8 +143,91 @@ body {
     font-size: 11px;
 }
 .company__popup {
+    display: block;
+    z-index: 1080;
+    border-radius: 10px;
+    border: 5px solid #5D6478;
+    background: #5D6478;
+    position: relative;
+    width: 95%;
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%, 0);
     display: none;
 }
+.company__popup-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.company__popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+}
+.company__popup-content-top {
+    border-radius: 5px 5px 0px 0px;
+    background: #FFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px 25px 30px;
+    gap: 22px;
+}
+.company__popup-img {
+    border: 2px solid #2A252A;
+    border-radius: 4px;
+}
+.company__popup-content-top-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.company__popup-content-top-right-poste {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px 10px 10px;
+    border-radius: 3px;
+    background: #666;
+    gap: 8px;
+}
+.poste-text {
+    text-shadow: none;
+    font-size: 12px;
+}
+.poste-name {
+    font-size: 12px;
+}
+.company__popup-content-top-right-description {
+    font-size: 12px;
+    text-align: center;
+}
+.company__popup-content-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 5px 5px;
+    background: #DEEBF1;
+    padding: 10px 25px 30px 25px;
+    gap: 15px;
+
+}
+.company__popup-content-bottom-text {
+    font-size: 12px;
+}
+
+
+
+
+
 .oserv-ship {
     top: 27px;
     left: 34px;
@@ -290,7 +373,6 @@ body {
 .competence__tab-card {
     position: relative;
     width: 75px;
-
 }
 .competence__tab-card-box {
     border: 1.5px solid #2A252A;
