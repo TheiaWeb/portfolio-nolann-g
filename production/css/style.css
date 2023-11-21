@@ -530,9 +530,281 @@ padding-top: 5px;
     box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.25), 0px -2px 2px 0px #BA6301 inset, 0px 2px 2px 0px #F8C310 inset;
 }
 
-.profil_popup{
+  /* Style for the popup */
+  #profil_popup {
+    position: absolute; /* Use relative positioning for popup within mobile__window */
+    z-index: 1080; /* Above the dark overlay */
     display: none;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    
+    
+
+  }
+.profil__popup-box {
+    position: relative;
+
+
 }
+.profil__popup-banner {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+}
+.profil__popup-croix {
+    position: absolute;
+    right: 15px;
+    top: -15px;
+    z-index: 101;
+}
+.profil-content-box {
+    height: 70vh;
+    overflow: scroll;
+    border: 5px solid #5D6478;
+    border-radius: 10px;
+    width: 96%;
+    margin: auto;
+    background: url('../img/profil__popup-bg.png');
+    
+}
+.profil__popup-btn-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 25px;
+}
+.profil__popup-content-top {
+    margin-top: 70px;
+    position: relative;
+    width: 262px;
+    height: 77px;
+}
+.profil__popup-pp {
+    position: absolute;
+    bottom: 4px;
+    right: 30px;
+}
+
+
+
+.profil__popup-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 10px;
+    gap: 8px;
+}
+.profil__popup-header-name {
+    color: #F9CB37;
+}
+.profil__popup-header-job {
+    font-size: 12px;
+}
+.profil__popup-header-socials {
+    display: flex;
+    gap: 15px;
+}
+.profil__popup-header-socials p {
+    color: #85D8F5;
+    font-size: 12px;
+}
+.profil__popup-education {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profil__popup-education-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.profil__popup-education-header p {
+    font-size: 13px;
+}
+.profil__popup-pro-header-top,
+.profil__popup-education-header-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.profil__popup-education-header-top hr {
+    width: 90px;
+    border: 1px solid #A87BE3;
+    box-shadow: 0px -0.85596px 0px 0px #4F1896 inset, 0px 0.85596px 0px 0px rgba(106, 77, 120, 0.50) inset;
+}
+.profil__popup-education-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 96%;
+    margin: 15px auto;
+}
+.profil__popup-hr-yellow {
+    border: 1px solid #F4CE1F;
+    box-shadow: 0px -0.85596px 0px 0px #967818 inset, 0px 0.85596px 0px 0px rgba(99, 120, 77, 0.50) inset;
+    width: 96%;
+}
+.profil__popup-hr-purple {
+    border: 1px solid #A87BE3;
+    box-shadow: 0px -0.85596px 0px 0px #967818 inset, 0px 0.85596px 0px 0px rgba(99, 120, 77, 0.50) inset;
+    width: 96%;
+}
+.profil__popup-hr-blue {
+    border: 1px solid #A0E8F8;
+    box-shadow: 0px -0.85596px 0px 0px #967818 inset, 0px 0.85596px 0px 0px rgba(99, 120, 77, 0.50) inset;
+    width: 96%;
+}
+.profil__popup-hr-green {
+    border: 1px solid #65F462;
+    box-shadow: 0px -0.85596px 0px 0px #967818 inset, 0px 0.85596px 0px 0px rgba(99, 120, 77, 0.50) inset;
+    width: 96%;
+}
+.profil__popup-education-content-exp {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.40);
+    width: 94%;
+    padding: 10px;
+    align-items: center;
+}
+.profil__popup-education-content-exp-title {
+    color: #F9CB37;
+    font-size: 11px;
+    text-align: center;
+}
+.profil__popup-education-content-box {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.profil__popup-education-content-box-left {
+    display: flex;
+    align-items: center;
+}
+.profil__popup-education-content-box-left img {
+    margin-right: -20px;
+    z-index: 5;
+}
+.profil__popup-education-content-box-left div {
+    display: flex;
+    align-items: center;
+    border-radius: 6.2px;
+    background: rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 3.1px 3.1px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 10px 10px;
+    gap: 5px;
+    width: 150px;
+    justify-content:center;
+}
+.bac-num {
+    color: #F9CB37;
+    font-size: 14px;
+}
+.bac-project {
+    font-size: 10px;
+}
+
+.color-purple {
+    color: #A87BE3;
+}
+.yellow-smal-hr {
+    width: 90px;
+    border: 1px solid #F4CE1F;
+    box-shadow: 0px -0.85596px 0px 0px #968218 inset, 0px 0.85596px 0px 0px rgba(117, 120, 77, 0.50) inset;
+}
+.profil__popup-pro {
+    background: url('../img/profil__popup-pro-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+}
+.profil__popup-pro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.profil__popup-pro-content img {
+    margin-bottom: -20px;
+    z-index: 5;
+}
+.profil__popup-pro-content-text {
+    display: flex;
+    align-items: center;
+    border-radius: 6.2px;
+    background: rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 3.1px 3.1px 0px rgba(0, 0, 0, 0.25) inset;
+    padding: 20px 10px 10px 10px;
+    gap: 5px;
+    justify-content:center;
+}
+.profil__popup-pro-content-text p {
+    font-size: 12px;
+    line-height: 130%;
+    text-align: center;
+}
+.pro-title {
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0;
+}
+.color-blue {
+    color: #9DECFF;
+}
+.color-yellow {
+    color: #F4CE1F;
+}
+.color-green {
+    color: #65F462;
+}
+.profil__popup-sep {
+    width: 100%;
+    height: 10px;
+    background-color: #012E7E;
+}
+.profil__popup-competence {
+    background: url('../img/competence-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 0;
+}
+.profil__popup-langues .competence__tab-row,
+.profil__popup-competence .competence__tab-row {
+    scale: 0.8;
+}
+.profil__popup-langues .competence__tab-row p,
+.profil__popup-competence .competence__tab-row p {
+    font-size: 11px;
+}
+
+
+
+
+
+.profil__popup-langues {
+    padding: 20px 0px;
+}
+
+.profil__popup-btn {
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 15px;
+    background: #FFB901;
+    border: none;
+    box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.25), 0px -2px 2px 0px #BA6301 inset, 0px 2px 2px 0px #F8C310 inset;
+}
+
 
 /*==================== menu top ====================*/
 .menu__top {
@@ -672,11 +944,5 @@ margin-bottom: -3px;
     z-index: 1040; /* Above the content of mobile__window */
   }
   
-  /* Style for the popup */
-  #profil_popup {
-    position: relative; /* Use relative positioning for popup within mobile__window */
-    z-index: 1080; /* Above the dark overlay */
-    background-color:white;
-  }
-  
+
   
