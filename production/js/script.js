@@ -117,32 +117,34 @@ function togglePopup(bateauId, popupId) {
   const bateau = document.getElementById(bateauId);
   const popup = document.getElementById(popupId);
 
-  bateau.addEventListener('click', () => {
-    // Create the overlay element
-    const overlay = document.createElement('div');
-    overlay.id = 'overlay';
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Semi-transparent black
-    overlay.style.zIndex = '1040'; // Place it above other content
-
-    // Append the overlay to the body
-    document.body.appendChild(overlay);
-
-    // Show the popup
+  // Function to show the popup and darken the background
+  function showPopup() {
     popup.style.display = "block";
+    mobileWindow.classList.add("darken"); // Add a class to darken the mobile__window
+  }
+
+  // Function to close the popup and remove the dark overlay
+  function closePopup() {
+    popup.style.display = "none";
+    mobileWindow.classList.remove("darken"); // Remove the class to remove the dark overlay
+  }
+
+  bateau.addEventListener('click', (e) => {
+    showPopup();
+    e.stopPropagation(); // Prevent the click event from propagating to the document
   });
 
   const closeBtn = document.getElementById(bateauId + "__Popup");
-  closeBtn.addEventListener('click', () => {
-    const overlay = document.getElementById('overlay');
-    if (overlay) {
-      document.body.removeChild(overlay);
+  closeBtn.addEventListener('click', (e) => {
+    closePopup();
+    e.stopPropagation(); // Prevent the click event from propagating to the document
+  });
+
+  // Close the popup when clicking outside of it
+  document.addEventListener('click', (e) => {
+    if (e.target !== popup && !popup.contains(e.target)) {
+      closePopup();
     }
-    popup.style.display = "none";
   });
 }
 
@@ -155,6 +157,7 @@ togglePopup("bateauWooka", "company__popup_wooka");
 togglePopup("bateauDexxon", "company__popup_dexxon");
 togglePopup("bateauWavy", "company__popup_wavy");
 togglePopup("bateauViv", "company__popup_viv");
+
 
 
 // Event listener to close the popup when clicking outside the popup
@@ -330,6 +333,9 @@ buttons.forEach((button) => {
     moveTrianglesToActiveButton(button);
   });
 });
+
+
+
 //#endregion
 
 //#region Incrementeur Coins + Gems
