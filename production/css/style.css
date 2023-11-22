@@ -409,6 +409,10 @@ body {
 .orange__card-border {
     filter: drop-shadow(-2px 0px 2px #DE6617) drop-shadow(2px 0px 2px #DE6617) drop-shadow(0px -2px 2px #DE6617) drop-shadow(0px 2px 2px #DE6617);
 }
+.gold__card-border {
+    filter: drop-shadow(-2px 0px 2px #F9CB37) drop-shadow(2px 0px 2px #F9CB37) drop-shadow(0px -2px 2px #F9CB37) drop-shadow(0px 2px 2px #F9CB37);
+}
+
 .competence__goutte {
     position: absolute;
     top: -5px;
@@ -435,6 +439,17 @@ body {
 }
 .competence__tab-card-banner-orange p {
     color: #FCC373;
+    font-size: 9px;
+    
+}
+.competence__tab-card-banner-gold {
+    background-color: #BFC14A;
+    padding: 5px;
+    text-align: center;
+    border-radius: 0 0 4px 4px;
+}
+.competence__tab-card-banner-gold p {
+    color: #FBF198;
     font-size: 9px;
     
 }
