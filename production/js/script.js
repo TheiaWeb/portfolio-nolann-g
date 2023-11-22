@@ -75,39 +75,52 @@ const PopUptext = document.getElementById("profil_popup");
 const closeButton = document.getElementById("image_close_popup");
 const imageprofile = document.getElementById("profil__banner-pp");
 const mobileWindow = document.querySelector(".mobile__window");
+const ProfilDisplay = document.querySelector('.profil__display'); // Selector for the 'profil' element
 
 // Function to show the popup
 function showPopup() {
   PopUptext.style.display = "block";
-  mobileWindow.classList.add("darken"); // Add a class to darken the mobile__window
+  mobileWindow.classList.add("darken");
 }
 
 // Function to close the popup
 function closePopup() {
   PopUptext.style.display = "none";
-  mobileWindow.classList.remove("darken"); // Remove the class to remove the dark overlay
+  mobileWindow.classList.remove("darken");
 }
 
 imageprofile.addEventListener('click', (e) => {
   showPopup();
-  e.stopPropagation(); // Prevent the click event from propagating to the document
+  e.stopPropagation(); // Prevents propagation to the document
 });
 
 buttonDecouvrir.addEventListener('click', (e) => {
   showPopup();
-  e.stopPropagation(); // Prevent the click event from propagating to the document
+  e.stopPropagation(); // Prevents propagation to the document
 });
 
 closeButton.addEventListener('click', (e) => {
   closePopup();
-  e.stopPropagation(); // Prevent the click event from propagating to the document
+  e.stopPropagation(); // Prevents propagation to the document
 });
 
-document.addEventListener('click', (e) => {
-  if (e.target !== PopUptext && !PopUptext.contains(e.target)) {
+function openPopupAndScroll(id) {
+  showPopup(); // Open the popup first
+  document.getElementById(id).scrollIntoView(); // Then scroll to the element with the given id
+}
+
+// Updated event listener for the document
+document.addEventListener('click', function (e) {
+  const isClickInsidePopup = PopUptext.contains(e.target);
+  const isProfilDisplayBlock = ProfilDisplay.style.display === 'block';
+
+  // Close the popup if clicked outside and if profil display is 'block'
+  if (!isClickInsidePopup && isProfilDisplayBlock) {
     closePopup();
   }
 });
+
+
 //#endregion
 
 //#region Entreprises
@@ -116,37 +129,48 @@ document.addEventListener('click', (e) => {
 function togglePopup(bateauId, popupId) {
   const bateau = document.getElementById(bateauId);
   const popup = document.getElementById(popupId);
+  const mobileWindow = document.querySelector('.mobile__window');
+  const entreprisesDisplay = document.querySelector('.entreprises__display');
 
-  // Function to show the popup and darken the background
+  // Show popup function
   function showPopup() {
     popup.style.display = "block";
-    mobileWindow.classList.add("darken"); // Add a class to darken the mobile__window
+    mobileWindow.classList.add("darken");
   }
 
-  // Function to close the popup and remove the dark overlay
+  // Close popup function
   function closePopup() {
     popup.style.display = "none";
-    mobileWindow.classList.remove("darken"); // Remove the class to remove the dark overlay
+    mobileWindow.classList.remove("darken");
   }
 
+  // Event listener for the bateau element
   bateau.addEventListener('click', (e) => {
     showPopup();
-    e.stopPropagation(); // Prevent the click event from propagating to the document
+    e.stopPropagation();
   });
 
+  // Event listener for the close button in the popup
   const closeBtn = document.getElementById(bateauId + "__Popup");
   closeBtn.addEventListener('click', (e) => {
     closePopup();
-    e.stopPropagation(); // Prevent the click event from propagating to the document
+    e.stopPropagation();
   });
 
-  // Close the popup when clicking outside of it
+  // Add event listener to document to handle clicks outside the popup
   document.addEventListener('click', (e) => {
-    if (e.target !== popup && !popup.contains(e.target)) {
+    const isClickInsidePopup = popup.contains(e.target);
+    const isEntreprisesDisplayBlock = entreprisesDisplay.style.display === 'block';
+  
+    // Close the popup if clicked outside and if entreprises display is 'block'
+    if (!isClickInsidePopup && isEntreprisesDisplayBlock) {
       closePopup();
     }
-  });
-}
+  }, true); // The third parameter 'true' sets the listener to capture phase
+}// Updated event listener for the document
+
+
+
 
 // Call the function for each element
 togglePopup("bateauOserv", "company__popup_oserv");
@@ -348,14 +372,17 @@ function updateDisplay(elementId) {
         }
 
         // Add click event listeners for the first set of buttons
-        var addButton1 = document.getElementById("addcoins");
+        var addButton1 = document.getElementById("addcoins1");
         var addButton3 = document.getElementById("addcoins3");
 
         addButton1.addEventListener("click", function() {
             updateDisplay("Coins1");
+            updateDisplay("Coins3");
+
         });
 
         addButton3.addEventListener("click", function() {
+            updateDisplay("Coins1");
             updateDisplay("Coins3");
         });
 
@@ -365,9 +392,11 @@ function updateDisplay(elementId) {
 
         addButton2.addEventListener("click", function() {
             updateDisplay("Coins2");
+            updateDisplay("Coins4");
         });
 
         addButton4.addEventListener("click", function() {
+            updateDisplay("Coins2");
             updateDisplay("Coins4");
         });
 
