@@ -206,7 +206,7 @@ const gmailLink1 = document.getElementById('gmail-link-1');
     gmailLink1.addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default behavior of the link
         // Define email parameters
-        const to = 'vinc.charles0@gmail.com'; // Update this to the recipient's email address
+        const to = 'contact.thenono@gmail.com'; // Update this to the recipient's email address
         const subject = 'Subject here';
         const body = 'Body of the email here';
 
@@ -227,7 +227,7 @@ const gmailLink1 = document.getElementById('gmail-link-1');
     gmailLink2.addEventListener('click', function (event) {
       event.preventDefault(); // Prevent the default behavior of the link
       // Define email parameters
-      const to = 'vinc.charles0@gmail.com'; // Update this to the recipient's email address
+      const to = 'contact.thenono@gmail.com'; // Update this to the recipient's email address
       const subject = 'Subject here';
       const body = 'Body of the email here';
 
@@ -248,7 +248,7 @@ const gmailLink1 = document.getElementById('gmail-link-1');
   gmailLink3.addEventListener('click', function (event) {
     event.preventDefault(); // Prevent the default behavior of the link
     // Define email parameters
-    const to = 'vinc.charles0@gmail.com'; // Update this to the recipient's email address
+    const to = 'contact.thenono@gmail.com'; // Update this to the recipient's email address
     const subject = 'Subject here';
     const body = 'Body of the email here';
 
