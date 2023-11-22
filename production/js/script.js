@@ -421,10 +421,10 @@ document.getElementById('progress_bar2').style.width = calculatedWidth + 'px';
 //#region loader
 document.addEventListener("DOMContentLoaded", function() {
   setTimeout(function() {
-
       document.getElementById("loader").style.display = "none";
       document.getElementById("wrapper").style.display = "block";
       document.body.style.backgroundColor = "initial"; // or any other background color
-  }, 1500); // 4000 milliseconds = 4 seconds
+  }, 2500); // 4000 milliseconds = 4 seconds
 });
 //#endregion
+
