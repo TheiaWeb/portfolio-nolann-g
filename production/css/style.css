@@ -77,12 +77,15 @@ body {
     color: white;
     font-family: 'ClashofClans', sans-serif;
     text-shadow:
-        -0.7px -0.7px 0 #000,  
-         0.7px -0.7px 0 #000,
-        -0.7px  0.7px 0 #000,
-         0.7px  0.7px 0 #000;
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
-
+.opacity-0 {
+    display: flex;
+    opacity: 0;
+}
 /*==================== entreprises ====================*/
 .entreprises__display {
     background: url('../img/company__bg.png');
@@ -487,6 +490,7 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 12px;
+    overflow-y: hidden;
 }
 
 .profil__banner-top {
@@ -902,15 +906,28 @@ padding-top: 5px;
     border: 0.5px solid #000;
     font-size: 13px;
     background-color: rgba(18, 6, 28, 0.6);
+    gap: 4px;
+height: 30px; 
+padding: 0 10px;   
+border-radius: 4px;
+    z-index: 1;
 }
 
 .menu-top__bar p {
     z-index: 2;
 }
+#addcoins1,
+#addcoins2 {
+    width: 28px;
+    height: 28px;
+    z-index: 150;
+}
 .top-menu-coin {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+
 }
 .top-menu-coin img {
     height: 25px;
@@ -918,18 +935,23 @@ padding-top: 5px;
 .top-menu-gemme-img {
 margin-left: -8px;
 margin-bottom: -3px;
+z-index: 100;
+
 }
 .top-menu-coin-img {
     margin-left: -8px;
     margin-bottom: -3px;
+    position: relative;
+    z-index: 100;
+
 }
 
 #progress_bar,
 #progress_bar2 {
-    left: 0;
+    left: -2px;
     position: absolute;
     background-color :#10abf7;
-    height: 3vh;
+    height: 30px;
     max-width: 100px;
     z-index: 0;
     border: 0.5px solid #000;
@@ -1074,8 +1096,8 @@ margin-bottom: -3px;
         gap: 10px;
     }
     .profil-content img {
-        scale: 1.1;
-        padding: 50px 0;
+        scale: 1;
+        padding: 20px 0;
     }
     .profil__banner-bottom-card {
         scale: 1.15;
@@ -1088,6 +1110,9 @@ margin-bottom: -3px;
         scale: 1.2;
         margin-top: 20px;
     }
+    .competence__display .competence__tab-card {
+        scale: 1.15;
+    }
   }
 
   @media screen and (max-width: 380px) {
@@ -1098,5 +1123,30 @@ margin-bottom: -3px;
     .competence__tab-content-bot {
         padding: 10px;
 
+    }
+  }
+  @media screen and (max-height: 771px) {
+    .profil-content img {
+        scale: 0.8;
+    }
+    .profil__main-btn {
+        padding: 15px;
+        border-radius: 3px;
+        font-size: 15px;
+        background: #FFB901;
+        border: none;
+        box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.25), 0px -2px 2px 0px #BA6301 inset, 0px 2px 2px 0px #F8C310 inset;
+    }
+    .profil__banner-bottom {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        padding: 20px 10px;
+        justify-content: space-between;
+        scale: 0.8;
+    }
+    .profil__banner-top {
+        scale: 0.8;
+        gap: 50px;
     }
   }
