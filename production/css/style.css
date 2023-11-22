@@ -1222,11 +1222,22 @@ z-index: 100;
 }
 
 #wrapper {
-    display: none;
+    display: flex;
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* Adjust duration as needed */
+}
+
+#wrapper.fade-in {
+    display: block;
+    opacity: 1;
 }
 
 .fade-out {
     animation: fadeOut 1s ease-out forwards;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in forwards;
 }
 
 @keyframes fadeOut {

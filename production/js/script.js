@@ -422,14 +422,22 @@ document.getElementById('progress_bar2').style.width = calculatedWidth + 'px';
 document.addEventListener("DOMContentLoaded", function() {
   setTimeout(function() {
       document.getElementById("loader").style.display = "none";
-      document.getElementById("wrapper").style.display = "block";
-      document.body.style.backgroundColor = "initial"; // or any other background color
-  }, 2500); // 4000 milliseconds = 4 seconds
+      document.getElementById("wrapper").classList.add("fade-in");
+  }, 2500); // Adjust time as needed
 });
+
+
 //#endregion
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
       var loader = document.getElementById('loader');
       loader.classList.add('fade-out');
+  }, 1900); // Modifiez la durée (5000 ms = 5 secondes) selon vos besoins
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+      var container = document.getElementById('wrapper');
+      container.classList.add('fade-in');
   }, 2300); // Modifiez la durée (5000 ms = 5 secondes) selon vos besoins
 });
