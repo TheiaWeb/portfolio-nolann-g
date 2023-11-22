@@ -75,6 +75,10 @@ const PopUptext = document.getElementById("profil_popup");
 const closeButton = document.getElementById("image_close_popup");
 const imageprofile = document.getElementById("profil__banner-pp");
 const mobileWindow = document.querySelector(".mobile__window");
+const profilecrown1 = document.querySelector(".profilecrown1")
+const profilecrown2 = document.querySelector(".profilecrown2")
+const profilecrown3 = document.querySelector(".profilecrown3")
+const profilecrown4 = document.querySelector(".profilecrown4")
 
 // Function to show the popup
 function showPopup() {
@@ -93,6 +97,51 @@ imageprofile.addEventListener('click', (e) => {
   e.stopPropagation(); // Prevent the click event from propagating to the document
 });
 
+profilecrown1.addEventListener('click', (e) => {
+  showPopup(); // Show the pop-up
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+
+  setTimeout(function() {
+     // Get the "exp1" element and scroll to it
+     var exp1Element = document.getElementById('exp1');
+     exp1Element.scrollIntoView();
+  }, 500); // Wait for 500 milliseconds before scrolling
+ });
+
+ profilecrown2.addEventListener('click', (e) => {
+  showPopup(); // Show the pop-up
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+
+  setTimeout(function() {
+     // Get the "exp1" element and scroll to it
+     var exp1Element = document.getElementById('exp2');
+     exp1Element.scrollIntoView();
+  }, 500); // Wait for 500 milliseconds before scrolling
+ });
+
+ 
+ profilecrown3.addEventListener('click', (e) => {
+  showPopup(); // Show the pop-up
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+
+  setTimeout(function() {
+     // Get the "exp1" element and scroll to it
+     var exp1Element = document.getElementById('exp3');
+     exp1Element.scrollIntoView();
+  }, 500); // Wait for 500 milliseconds before scrolling
+ });
+ profilecrown4.addEventListener('click', (e) => {
+  showPopup(); // Show the pop-up
+  e.stopPropagation(); // Prevent the click event from propagating to the document
+
+  setTimeout(function() {
+     // Get the "exp1" element and scroll to it
+     var exp1Element = document.getElementById('exp4');
+     exp1Element.scrollIntoView();
+  }, 500); // Wait for 500 milliseconds before scrolling
+ });
+
+
 buttonDecouvrir.addEventListener('click', (e) => {
   showPopup();
   e.stopPropagation(); // Prevent the click event from propagating to the document
@@ -103,17 +152,27 @@ closeButton.addEventListener('click', (e) => {
   e.stopPropagation(); // Prevent the click event from propagating to the document
 });
 
+
+
 document.addEventListener('click', (e) => {
-  if (e.target !== PopUptext && !PopUptext.contains(e.target)) {
-    closePopup();
-  }
-});
+   if (!PopUptext.contains(e.target)) {
+     closePopup();
+   }
+   
+ });
+
+
+
+
+
+
 //#endregion
 
 //#region Entreprises
 
 // Function to handle the click event
 function togglePopup(bateauId, popupId) {
+  
   const bateau = document.getElementById(bateauId);
   const popup = document.getElementById(popupId);
 
@@ -135,17 +194,20 @@ function togglePopup(bateauId, popupId) {
   });
 
   const closeBtn = document.getElementById(bateauId + "__Popup");
+  
   closeBtn.addEventListener('click', (e) => {
     closePopup();
     e.stopPropagation(); // Prevent the click event from propagating to the document
   });
 
-  // Close the popup when clicking outside of it
-  document.addEventListener('click', (e) => {
-    if (e.target !== popup && !popup.contains(e.target)) {
-      closePopup();
-    }
-  });
+ 
+
+document.addEventListener('click', (e) => {
+   if (!PopUptext.contains(e.target) ) {
+     closePopup();
+   }
+   
+ });
 }
 
 // Call the function for each element
@@ -273,12 +335,36 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initially, display the "Profil" section
   showSection(profilSection);
 
-  // Add click event listeners to navigation buttons
-  competencesButton.addEventListener("click", function () {
-    showSection(competencesSection);
-    document.getElementById("Coins3").value == document.getElementById("Coins").value;
-    document.getElementById("Coins4").value == document.getElementById("Coins2").value;
-  });
+// Store the current numbers of Coins and Gems in local storage
+function storeNumbers() {
+  var CoinsProfile = document.getElementById("Coins1");
+  var GemsProfile = document.getElementById("Coins2");
+  localStorage.setItem("CoinsProfile", CoinsProfile.innerHTML);
+  localStorage.setItem("GemsProfile", GemsProfile.innerHTML);
+}
+
+// Load the stored numbers from local storage and update the new divs
+function loadNumbers() {
+  var CoinsProfileStored = localStorage.getItem("CoinsProfile");
+  var GemsProfileStored = localStorage.getItem("GemsProfile");
+
+  // Assuming there are divs with the id 'newCoins1' and 'newCoins2' for displaying the stored numbers
+  document.getElementById("CoinsComp").innerHTML = CoinsProfileStored;
+  document.getElementById("GemsComp").innerHTML = GemsProfileStored;
+}
+
+// Update the timeout duration according to your requirements
+var timeoutDuration = 500; // 1000 milliseconds = 1 second
+
+competencesButton.addEventListener("click", function () {
+  showSection(competencesSection);
+
+  // Store the current numbers after 1 second
+  setTimeout(storeNumbers, timeoutDuration);
+
+  // Load the stored numbers and update the new divs after 2 seconds
+  setTimeout(loadNumbers, timeoutDuration * 2);
+});
 
   profilButton.addEventListener("click", function () {
     showSection(profilSection);
@@ -340,6 +426,9 @@ buttons.forEach((button) => {
 
 //#region Incrementeur Coins + Gems
 // Get a reference to the add button element
+document.addEventListener("DOMContentLoaded", (e) => {
+
+
 function updateDisplay(elementId) {
             var coinsElement = document.getElementById(elementId);
             var currentNumber = parseInt(coinsElement.textContent);
@@ -348,30 +437,29 @@ function updateDisplay(elementId) {
         }
 
         // Add click event listeners for the first set of buttons
-        var addButton1 = document.getElementById("addcoins");
+        var addButton1 = document.getElementById("addcoins1");
+        var addButton2 = document.getElementById("addcoins2");
         var addButton3 = document.getElementById("addcoins3");
+        var addButton4 = document.getElementById("addcoins4");
 
         addButton1.addEventListener("click", function() {
             updateDisplay("Coins1");
         });
 
-        addButton3.addEventListener("click", function() {
-            updateDisplay("Coins3");
-        });
-
-        // Add click event listeners for the second set of buttons
-        var addButton2 = document.getElementById("addcoins2");
-        var addButton4 = document.getElementById("addcoins4");
-
         addButton2.addEventListener("click", function() {
             updateDisplay("Coins2");
         });
 
-        addButton4.addEventListener("click", function() {
-            updateDisplay("Coins4");
+        addButton3.addEventListener("click", function() {
+          updateDisplay("CoinsComp");
         });
 
-        
+        addButton4.addEventListener("click", function() {
+        updateDisplay("GemsComp");
+      });
+
+      }     
+      );  
 //#endregion
 
 //#region Progress Bar

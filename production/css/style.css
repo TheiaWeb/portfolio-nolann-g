@@ -66,8 +66,6 @@ body {
     width: 500px;
     background-color: red;
     position: relative;
-    border-radius: 20px;
-    border: 7px solid #59687B;
 }
 @media only screen and (max-width: 500px) {
     .mobile__window {
@@ -93,7 +91,6 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    border-radius: 12px;
 }
 .company__top {
     display: flex;
@@ -133,7 +130,7 @@ body {
 }
 .company__content {
     position: relative;
-    height: 55%;
+    height: 57%;
 }
 .company__ship {
     display: inline-flex;
@@ -141,9 +138,6 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-}
-.company__ship:hover {
-    cursor: pointer;
 }
 .company__ship p {
     font-size: 11px;
@@ -166,9 +160,6 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-}
-.company__popup_close:hover {
-    cursor: pointer;
 }
 .company__popup-header {
     display: flex;
@@ -238,36 +229,36 @@ body {
 
 
 .oserv-ship {
-    top: 6%;
-    left: 8%;
+    top: 27px;
+    left: 34px;
 }
 .torc-ship {
-    top: 8%;
-    right: 15%;
+    top: 35px;
+    right: 15px;
 }
 .green-ship {
-    top: 25%;
-    left: 38%;
+    top: 106px;
+    left: 146px;
 }
 .sncf-ship {
-    top: 35%;
-    left: 8%;
+    top: 166px;
+    left: 20px;
 }
 .wooka-ship {
-    top: 60%;
-    left: 40%;
+    top: 214px;
+    left: 146px;
 }
 .dexxon-ship {
-    top: 40%;
-    right: 8%;
+    top: 191px;
+    right: 25px;
 }
 .wavy-ship {
-    top: 70%;
-    left: 12%;
+    top: 312px;
+    left: 50px;
 }
 .viv-ship {
-    top: 71%;
-    right: 10%;
+    top: 328px;
+    right: 62px;
 }
 .company__bottom {
     border-radius: 10px;
@@ -290,15 +281,9 @@ body {
     border-radius: 6px;
     background: #BE74FC;
     box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.25), 0px -1px 4px 1.5px #583A70 inset;
-    padding: 10px;
+    padding: 5px 10px;
     border: none;
-    color: #fff;
 }
-.company__bottom-btn:hover {
-    cursor: pointer;
-} 
-
-
 
 
 
@@ -306,6 +291,14 @@ body {
 
 .mobile__window{
     display: flex;
+}
+.testslide {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
+    position: absolute;
 }
 .testslide {
     display: flex;
@@ -327,7 +320,6 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    border-radius: 12px;
 }
 .competence__tab-content {
     display: none;
@@ -487,7 +479,6 @@ body {
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    border-radius: 12px;
 }
 
 .profil__banner-top {
@@ -556,12 +547,10 @@ padding-top: 5px;
     border: none;
     box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.25), 0px -2px 2px 0px #BA6301 inset, 0px 2px 2px 0px #F8C310 inset;
 }
-.profil__main-btn:hover {
-    cursor: pointer;
-}
 
   /* Style for the popup */
   #profil_popup {
+    scroll-behavior: smooth;
     position: absolute; /* Use relative positioning for popup within mobile__window */
     z-index: 1080; /* Above the dark overlay */
     display: none;
@@ -585,7 +574,6 @@ padding-top: 5px;
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 100;
-    width: 98%;
 }
 .profil__popup-croix {
     position: absolute;
@@ -935,44 +923,6 @@ margin-bottom: -3px;
     z-index: 0;
     border: 0.5px solid #000;
  }
-.profil__banner-bottom {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    padding: 80px 20px;
-    justify-content: space-between;
-}
-.profil__banner-bottom-card {
-    width: 85px;
-    height: 115px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 10px 5px;
-}
-.card-text {
-    font-size: 11px;
-    text-align: center;
-}
-.purple-card-empty {
-    justify-content: center;
-    text-align: center;
-    border-radius: 6px;
-    background: rgba(163, 102, 228, 0.60);
-    box-shadow: -3px 0px 0px 0px #9A5BE2 inset, 0px -5px 0px 0px #9A5BE2 inset, 3px 0px 0px 0px #9A5BE2 inset, 0px 3px 0px 0px #9A5BE2 inset;
-}
-.purple-card {
-    border-radius: 6px;
-    background: rgba(163, 102, 228, 0.80);
-    box-shadow: -3px 0px 0px 0px #9A5BE2 inset, 0px -5px 0px 0px #9A5BE2 inset, 3px 0px 0px 0px #9A5BE2 inset, 0px 3px 0px 0px #9A5BE2 inset;
-}
-.green-card {
-    border-radius: 6px;
-    background: #8BFFC5;
-    box-shadow: -3px 0px 0px 0px #76C8A3 inset, 0px -5px 0px 0px #76C8A3 inset, 3px 0px 0px 0px #76C8A3 inset, 0px 3px 0px 0px #76C8A3 inset;
-}
 
 
 /*==================== menu bbottom ====================*/
@@ -987,7 +937,7 @@ margin-bottom: -3px;
     background: #404B5E;
     backdrop-filter: blur(2px);
     border-top: 2px solid #4F5C70;
-    border-radius: 0 0 12px 12px;
+
     width: 100%;
 }
 
@@ -996,12 +946,6 @@ margin-bottom: -3px;
     background: #404B5E;
     border: #404B5E;
     width: 33.3%;
-}
-.nav-button-left {
-    border-radius: 0 0 0 12px;
-}
-.nav-button-right {
-    border-radius: 0 0 12px 0;
 }
 .nav-center {
     border-left: 1px solid #4F5C70 ;
