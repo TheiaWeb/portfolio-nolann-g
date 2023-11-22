@@ -7,11 +7,16 @@
     <title>Nolann Gerbault - Portfolio</title>
 </head>
 <body>
-    <div>
-        <section class="mobile__window swiper-container" >
+    <div id="loader">
+        <audio autoplay>
+            <source src="img/Clash_Royale_Start_UP_Sound.mp3" type="audio/mpeg">
+          </audio>
+    </div>
+    <div id="wrapper">
+        <section class="mobile__window" id="container">
        
         <!--======= COMPETENCES =======-->
-        <div class="competence__display swiper-slide" id="competences">
+        <div class="competence__display slider" id="competences">
             <div class="menu__top">
                 <img class="top-menu-main-img" src="img/top-menu__crown.png" alt="">
                 <div class="age__bar">
@@ -533,7 +538,7 @@
 
         <!--======= PROFIL =======-->
 
-        <div class="profil__display swiper-slide" id="profil">
+        <div class="profil__display slider" id="profil">
             <div class="menu__top">
                 <img class="top-menu-main-img" src="img/top-menu__crown.png" alt="">
                 <div class="age__bar">
@@ -1029,10 +1034,10 @@
             </div>
 
 
-        </div>
+        </div> 
 
         <!--======= ENTREPRISES =======-->
-        <div class="entreprises__display swiper-slide" id="entreprises">
+        <div class="entreprises__display slider" id="entreprises">
             <div class="company__top" >
                 <img src="img/company__logo-main.png" alt="">
                 <div class="company__top-banner">
