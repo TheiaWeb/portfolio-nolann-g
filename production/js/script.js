@@ -424,7 +424,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
       document.getElementById("loader").style.display = "none";
       document.getElementById("wrapper").style.display = "block";
-      document.body.style.backgroundColor = "initial"; // or any other background color
-  }, 1500); // 4000 milliseconds = 4 seconds
+  }, 2500); // 4000 milliseconds = 4 seconds
 });
 //#endregion
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+      var loader = document.getElementById('loader');
+      loader.classList.add('fade-out');
+  }, 2300); // Modifiez la durée (5000 ms = 5 secondes) selon vos besoins
+});
