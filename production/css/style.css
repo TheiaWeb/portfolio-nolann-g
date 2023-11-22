@@ -320,9 +320,6 @@ body {
 /*==================== compétence ====================*/
 
 
-#competences {
-    display: none;
-}
 .competence__display {
     background: url('../img/competence__bg.png');
     background-size: cover;
@@ -497,9 +494,9 @@ body {
 /*==================== profil ====================*/
 
 
-#profil {
+/* #slider-slide_profil {
     display: none;
-}
+} */
 .profil__display {
     background: url('../img/profil__bg.png');
     background-size: cover;
@@ -1167,3 +1164,29 @@ z-index: 100;
         gap: 50px;
     }
   }
+
+
+  /* test slide */
+  #wrapper {
+    display: flex;
+    overflow: hidden;
+}
+#slider-slide_competences, #slider-slide_profil, #slider-slide_entreprises {
+    flex-shrink: 0;
+    flex-grow: 0;
+    flex-basis: 100%; /* Assuming each section takes full width */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    width: 100%; /* Adjust as needed */
+}
+
+#slider-slide_competences {
+    transform: translateX(-200%);
+}
+
+#slider-slide_profil {
+    transform: translateX(-100%);
+}
+
+#slider-slide_entreprises {
+    transform: translateX(0%);
+}

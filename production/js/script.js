@@ -273,9 +273,9 @@ const gmailLink1 = document.getElementById('gmail-link-1');
 // JavaScript code to handle section switching
 document.addEventListener("DOMContentLoaded", function () {
   // Get references to the sections and navigation buttons
-  const competencesSection = document.getElementById("competences");
-  const profilSection = document.getElementById("profil");
-  const entreprisesSection = document.getElementById("entreprises");
+  const competencesSection = document.getElementById("slider-slide_competences");
+  const profilSection = document.getElementById("slider-slide_profil");
+  const entreprisesSection = document.getElementById("slider-slide_entreprise");
 
   const competencesButton = document.getElementById("competences-button");
   const profilButton = document.getElementById("profil-button");
@@ -283,15 +283,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to hide all sections
   function hideAllSections() {
-    competencesSection.style.display = "none";
-    profilSection.style.display = "none";
-    entreprisesSection.style.display = "none";
+    competencesSection.style.opacity = 0;
+    profilSection.style.opacity = 1;
+    entreprisesSection.style.opacity = 0;
+    competencesSection.style.pointerEvents = "none";
+    profilSection.style.pointerEvents = "none";
+    entreprisesSection.style.pointerEvents = "none";
   }
 
   // Function to show a specific section
   function showSection(section) {
     hideAllSections();
-    section.style.display = "block";
+    section.style.opacity = 1;
+    section.style.pointerEvents = "auto";
   }
 
   // Initially, display the "Profil" section
@@ -300,16 +304,23 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add click event listeners to navigation buttons
   competencesButton.addEventListener("click", function () {
     showSection(competencesSection);
-    document.getElementById("Coins3").value == document.getElementById("Coins").value;
-    document.getElementById("Coins4").value == document.getElementById("Coins2").value;
+    profilSection.style.transform = 'translateX(100%)';
+    competencesSection.style.transform = 'translateX(0)';
+    entreprisesSection.style.transform = 'translateX(200%)';
   });
 
   profilButton.addEventListener("click", function () {
     showSection(profilSection);
+    profilSection.style.transform = 'translateX(-100%)';
+    competencesSection.style.transform = 'translateX(-100%)';
+    entreprisesSection.style.transform = 'translateX(100%)';
   });
 
   entreprisesButton.addEventListener("click", function () {
     showSection(entreprisesSection);
+    profilSection.style.transform = 'translateX(-200%)';
+    competencesSection.style.transform = 'translateX(-100%)';
+    entreprisesSection.style.transform = 'translateX(-425%)';
   });
 });
 
@@ -419,4 +430,6 @@ document.getElementById('progress_bar2').style.width = calculatedWidth + 'px';
 
 
 //#endregion
+
+
 
