@@ -418,6 +418,7 @@ body {
     padding: 5px;
     text-align: center;
     border-radius: 0 0 4px 4px;
+    margin-top: -5px;
 }
 .competence__tab-card-banner-orange {
     background-color: #C16827;
@@ -438,6 +439,7 @@ body {
 .competence__img {
     width: 75px;
     height: 75px;
+    border-radius: 4px 4px 0 0;
 }
 
 .competence__bottom {
