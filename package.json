@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "firebase": "^10.6.0",
-    "swiper": "^11.0.4"
+    "firebase": "^10.6.0"
   }
 }
