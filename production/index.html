@@ -7,11 +7,11 @@
     <title>Nolann Gerbault - Portfolio</title>
 </head>
 <body>
-    <section class="mobile__window swiper-container" >
+    <div>
+        <section class="mobile__window swiper-container" >
        
         <!--======= COMPETENCES =======-->
-        <div>
-            <div class="competence__display swiper-slide" id="competences">
+        <div class="competence__display swiper-slide" id="competences">
             <div class="menu__top">
                 <img class="top-menu-main-img" src="img/top-menu__crown.png" alt="">
                 <div class="age__bar">
@@ -530,12 +530,10 @@
             </div>
         
         </div>
-        </div>
-        
 
         <!--======= PROFIL =======-->
-<div>
-    <div class="profil__display swiper-slide" id="profil">
+
+        <div class="profil__display swiper-slide" id="profil">
             <div class="menu__top">
                 <img class="top-menu-main-img" src="img/top-menu__crown.png" alt="">
                 <div class="age__bar">
@@ -594,7 +592,7 @@
                 </div>
                 <div class="profil__banner-top-right">
                     <div class="profil__banner-top-right-row">
-                        <a href="javascript:openPopupAndScroll('exp')"><img src="img/top-menu__crown.png" alt=""></a>
+                        <a href="javascript:showPopup()"><img src="img/top-menu__crown.png" alt=""></a>
                         <a href="javascript:openPopupAndScroll('exp1')"><img src="img/top-menu__crown.png" alt=""></a>
                     </div>
                     <div class="profil__banner-top-right-row">
@@ -631,13 +629,13 @@
                 <div class="profil_popup-box">
                 <img class="profil__popup-banner" src="img/profil__popup-banner.png" alt="">
                 <img class="profil__popup-croix" src="img/croix_fermeture_popup.png" alt="" id="image_close_popup">
-                <div class="profil-content-box" >
-                    <div class="profil__popup-content"  id ="exp">
+                <div class="profil-content-box">
+                    <div class="profil__popup-content">
                     <div class="profil__popup-content-top">
                         <img src="img/profil__popup-top.png" alt="">
                         <img class="profil__popup-pp" src="img/nolann__pp.png" alt="">
                     </div>
-                    <div class="profil__popup-header" >
+                    <div class="profil__popup-header">
                         <p class="text-clash profil__popup-header-name">Nolann Gerbault</p>
                         <p class="text-clash profil__popup-header-job">Social media manager</p>
                         <div class="profil__popup-header-socials">
@@ -710,7 +708,7 @@
                             </div>
                             <p class="text-clash">Expériences Profesionnelles</p>
                         </div>
-                        <div class="profil__popup-education-content" >
+                        <div class="profil__popup-education-content">
                             <hr class="profil__popup-hr-blue">
                             <div class="profil__popup-education-content-exp">
                                 <img src="img/pro-sncf.png" alt="" width="74px">
@@ -1034,12 +1032,9 @@
 
 
         </div>
-</div>
-        
 
         <!--======= ENTREPRISES =======-->
-        <div>
-            <div class="entreprises__display swiper-slide" id="entreprises">
+        <div class="entreprises__display swiper-slide" id="entreprises">
             <div class="company__top" >
                 <img src="img/company__logo-main.png" alt="">
                 <div class="company__top-banner">
@@ -1685,8 +1680,6 @@
                 <button class="company__bottom-btn text-clash">Contact</button></a>
             </div>
         </div>
-        </div>
-        
 
     
         <!--======= MENU BOTTOM =======-->
@@ -1712,6 +1705,8 @@
         </div>
 
     </section>
+    </div>
+    
     
 </body>
 <script type="module" src="js/firebase-config.js"></script>
