@@ -662,7 +662,10 @@ padding-top: 5px;
   .profil-content-box::-webkit-scrollbar-thumb:hover {
     background-color: #d19600; /* Couleur du pouce au survol */
   }
-  
+
+  .profil__popup-btn:hover {
+    cursor: pointer;
+  }
 .profil__popup-btn-box {
     display: flex;
     flex-direction: column;
