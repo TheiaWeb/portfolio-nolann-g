@@ -425,12 +425,21 @@ body {
     text-align: center;
     border-radius: 0 0 4px 4px;
     margin-top: -5px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .competence__tab-card-banner-orange {
     background-color: #C16827;
     padding: 5px;
     text-align: center;
     border-radius: 0 0 4px 4px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
 }
 .competence__tab-card-banner-purple p {
     color: #FB98FA;
@@ -447,6 +456,11 @@ body {
     padding: 5px;
     text-align: center;
     border-radius: 0 0 4px 4px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
 }
 .competence__tab-card-banner-gold p {
     color: #FBF198;
@@ -496,6 +510,9 @@ body {
 
 /*==================== profil ====================*/
 
+.profil__popup-croix:hover {
+    cursor: pointer;
+}
 
 #profil {
     display: none;
@@ -545,7 +562,7 @@ body {
 padding-top: 5px;
 }
 .profil__banner-top-left-content-socials  img {
-    width: 15px;
+    width: 20px;
 }
 .profil__banner-top-right {
     display: flex;
@@ -890,8 +907,8 @@ padding-top: 5px;
     justify-content: space-between;
 }
 .top-menu-main-img {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
 }
 .age__bar {
     display: flex;
@@ -1114,7 +1131,7 @@ z-index: 100;
     }
     .profil-content img {
         scale: 1;
-        padding: 20px 0;
+        padding: 0px 0;
     }
     .profil__banner-bottom-card {
         scale: 1.15;
@@ -1152,6 +1169,7 @@ z-index: 100;
         font-size: 15px;
         background: #FFB901;
         border: none;
+        margin-top: -30px;
         box-shadow: 0px 1.5px 1px 0px rgba(0, 0, 0, 0.25), 0px -2px 2px 0px #BA6301 inset, 0px 2px 2px 0px #F8C310 inset;
     }
     .profil__banner-bottom {
