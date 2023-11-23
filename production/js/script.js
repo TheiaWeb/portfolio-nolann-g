@@ -189,9 +189,7 @@ togglePopup("bateauViv", "company__popup_viv");
 
 
 //#endregion
-// https://platform.openai.com/docs/overview
-
-
+// https://platform.openai.com/docs/overview 
 //#region Ouverture Gmail 
 // Function to check if the user is on a mobile device
 function isMobile() {
@@ -403,7 +401,7 @@ function updateDisplay(elementId) {
 
 //#region Progress Bar
 // Calculate the percentage completion
-const currentValue = 126;
+const currentValue = 128;
 const maxValue = 365;
 const percentage = (currentValue / maxValue) * 100;
 
@@ -427,7 +425,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//#endregion
+
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
       var loader = document.getElementById('loader');
@@ -441,3 +439,4 @@ document.addEventListener('DOMContentLoaded', function() {
       container.classList.add('fade-in');
   }, 2300); // Modifiez la durée (5000 ms = 5 secondes) selon vos besoins
 });
+//#endregion
