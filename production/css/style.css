@@ -1230,7 +1230,7 @@ z-index: 100;
     z-index: 1000; /* S'assurer que le loader est au-dessus des autres éléments */
 }
 
-#loader span {
+#loader img {
     font-size: 20px;
     animation: bounce 1.5s infinite;
 }
