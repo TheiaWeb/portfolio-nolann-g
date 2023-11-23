@@ -209,32 +209,38 @@ const gmailLink1 = document.getElementById('gmail-link-1');
     gmailLink2.addEventListener('click', createMailHandler());
     gmailLink3.addEventListener('click', createMailHandler());
 
-function createMailHandler() {
-  return function (event) {
-      event.preventDefault(); // Prevent the default behavior of the link
-      // Define email parameters
-      const to = 'contact.thenono@gmail.com';
-      const subject = 'Subject here';
-      const body = 'Body of the email here';
-
-      if (isMobile()) {
-          if (isIOS()) {
-              // If the user is on an iOS device
-              const iosMailLink = `googlegmail:///co?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-              window.location.href = iosMailLink;
+    function createMailHandler() {
+      return function (event) {
+          event.preventDefault();
+          const to = 'contact.thenono@gmail.com';
+          const subject = 'Subject here';
+          const body = 'Body of the email here';
+  
+          if (isMobile()) {
+              if (isIOS()) {
+                  // Try opening the Gmail app on iOS
+                  const iosMailLink = `googlegmail:///co?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  window.location.href = iosMailLink;
+  
+                  // After a delay, offer to open the default mail app
+                  setTimeout(function() {
+                      if(confirm("If the Gmail app didn't open, would you like to use the default mail app?")) {
+                          window.location.href = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                      }
+                  }, 2000);
+              } else {
+                  // Android and other devices
+                  const mailLink = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  window.location.href = mailLink;
+              }
           } else {
-              // If the user is on an Android device
-              const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
-              window.location.href = gmailAppUrl;
+              // Non-mobile devices
+              const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              window.open(gmailWebUrl, '_blank');
           }
-      } else {
-          // If the user is not on a mobile device, open Gmail in a new window or tab
-          const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          window.open(gmailWebUrl, '_blank');
       }
   }
-}    
-    //#endregion
+  //#endregion
 
 //#region Nav Bottom
 // JavaScript code to handle section switching
