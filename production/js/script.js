@@ -193,78 +193,47 @@ togglePopup("bateauViv", "company__popup_viv");
 //#region Ouverture Gmail 
 // Function to check if the user is on a mobile device
 function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
+
+function isIOS() {
+  return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
 
 const gmailLink1 = document.getElementById('gmail-link-1');
     const gmailLink2 = document.getElementById('gmail-link-2');
     const gmailLink3 = document.getElementById('gmail-link-3');
 
-    // Add click event listeners for each Gmail link
-    gmailLink1.addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default behavior of the link
-        // Define email parameters
-        const to = 'contact.thenono@gmail.com'; // Update this to the recipient's email address
-        const subject = 'Subject here';
-        const body = 'Body of the email here';
+    gmailLink1.addEventListener('click', createMailHandler());
+    gmailLink2.addEventListener('click', createMailHandler());
+    gmailLink3.addEventListener('click', createMailHandler());
 
-        if (isMobile()) {
-            // If the user is on a mobile device, open the Gmail app if installed, or a web-based Gmail version
-            const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
-
-            // Redirect to the Gmail app or web-based Gmail
-            window.location.href = gmailAppUrl;
-        } else {
-            // If the user is not on a mobile device, open Gmail in a new window or tab
-            const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open Gmail in a new window or tab
-            window.open(gmailWebUrl, '_blank');
-        }
-    });
-    gmailLink2.addEventListener('click', function (event) {
+function createMailHandler() {
+  return function (event) {
       event.preventDefault(); // Prevent the default behavior of the link
       // Define email parameters
-      const to = 'contact.thenono@gmail.com'; // Update this to the recipient's email address
+      const to = 'contact.thenono@gmail.com';
       const subject = 'Subject here';
       const body = 'Body of the email here';
 
       if (isMobile()) {
-          // If the user is on a mobile device, open the Gmail app if installed, or a web-based Gmail version
-          const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
-
-          // Redirect to the Gmail app or web-based Gmail
-          window.location.href = gmailAppUrl;
+          if (isIOS()) {
+              // If the user is on an iOS device
+              const iosMailLink = `googlegmail:///co?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+              window.location.href = iosMailLink;
+          } else {
+              // If the user is on an Android device
+              const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+              window.location.href = gmailAppUrl;
+          }
       } else {
           // If the user is not on a mobile device, open Gmail in a new window or tab
           const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-          // Open Gmail in a new window or tab
           window.open(gmailWebUrl, '_blank');
       }
-  });
-  gmailLink3.addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent the default behavior of the link
-    // Define email parameters
-    const to = 'contact.thenono@gmail.com'; // Update this to the recipient's email address
-    const subject = 'Subject here';
-    const body = 'Body of the email here';
-
-    if (isMobile()) {
-        // If the user is on a mobile device, open the Gmail app if installed, or a web-based Gmail version
-        const gmailAppUrl = `intent://send?to=${encodeURIComponent(to)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}#Intent;scheme=mailto;package=com.google.android.gm;end`;
-
-        // Redirect to the Gmail app or web-based Gmail
-        window.location.href = gmailAppUrl;
-    } else {
-        // If the user is not on a mobile device, open Gmail in a new window or tab
-        const gmailWebUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // Open Gmail in a new window or tab
-        window.open(gmailWebUrl, '_blank');
-    }
-});
-    
+  }
+}    
     //#endregion
 
 //#region Nav Bottom
