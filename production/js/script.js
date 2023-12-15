@@ -377,8 +377,8 @@ function updateDisplay(elementId) {
 //#region Progress Bar
 // Calculate the percentage completion
 // Définir les dates de départ et de fin
-const startDate = new Date('2023-01-01'); // Date de départ
-const endDate = new Date('2023-12-31'); // Date de fin
+const startDate = new Date('2023-07-01'); // Date de départ
+const endDate = new Date('2024-07-01'); // Date de fin
 
 // Calculer la durée totale et la progression
 const totalDuration = endDate - startDate;
